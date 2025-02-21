@@ -9,10 +9,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: {
+          textPrimary: "#1a1b26",
+          textSecondary: "#4a4e69",
+          primary: "#6c63ff",
+          secondary: "#a29bfe",
+          background: "#ECF5FF",
+        },
+        dark: {
+          textPrimary: "#e0e0e0",
+          textSecondary: "#a0a4b8",
+          primary: "#ff6bcb",
+          secondary: "#ff8eb6",
+          background: "#0A0F24",
+        },
+      },
+      backgroundImage: {
+        "gradient-light":
+          "linear-gradient(to bottom, #ECF5FF, #B3E5FC, #81D4FA)",
+        "gradient-dark":
+          "linear-gradient(to bottom, #0A0F24, #1E2A47, #28345A)",
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 } satisfies Config;
