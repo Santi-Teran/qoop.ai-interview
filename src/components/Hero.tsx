@@ -24,7 +24,7 @@ const Hero = () => {
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         />
         <motion.div
-          className="w-[400px] h-[400px] bg-purple-500 opacity-20 rounded-full absolute bottom-0 right-0 blur-3xl"
+          className="w-[300px] h-[300px] bg-purple-500 opacity-20 rounded-full absolute bottom-30 right-0 blur-3xl"
           animate={{ scale: [1, 1.2, 1], rotate: [0, -15, 0] }}
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         />
