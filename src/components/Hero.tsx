@@ -19,12 +19,12 @@ const Hero = () => {
       {/* Background Circles */}
       <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <motion.div
-          className="w-[500px] h-[500px] bg-blue-500 opacity-20 rounded-full absolute -top-20 -left-40 blur-3xl"
+          className="w-[500px] h-[500px] bg-light-primary dark:bg-dark-primary opacity-20 rounded-full absolute -top-20 -left-40 blur-3xl"
           animate={{ scale: [1, 1.2, 1], rotate: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         />
         <motion.div
-          className="w-[300px] h-[300px] bg-purple-500 opacity-20 rounded-full absolute bottom-30 right-0 blur-3xl"
+          className="w-[300px] h-[300px] bg-light-tertiary dark:bg-dark-tertiary opacity-20 rounded-full absolute bottom-30 right-0 blur-3xl"
           animate={{ scale: [1, 1.2, 1], rotate: [0, -15, 0] }}
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         />
