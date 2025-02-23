@@ -14,6 +14,7 @@ export default {
           textSecondary: "#4a4e69",
           primary: "#6c63ff",
           secondary: "#a29bfe",
+          tertiary: "#FFB347",
           background: "#ECF5FF",
         },
         dark: {
@@ -21,8 +22,9 @@ export default {
           textSecondary: "#a0a4b8",
           primary: "#ff6bcb",
           secondary: "#ff8eb6",
+          tertiary: "#FFC75F",
           background: "#0A0F24",
-        },
+        }        
       },
       backgroundImage: {
         "gradient-light":
