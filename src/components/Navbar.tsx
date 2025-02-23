@@ -4,24 +4,43 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeChanger from "./ThemeChanger";
 
+const sections = ["home", "features", "pricing", "contact"];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
+
+      let currentSection = "home";
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+          }
+        }
+      });
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleScrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false); // Cierra el menú en mobile
+    }
+  };
 
   return (
     <motion.nav
@@ -38,21 +57,19 @@ const Navbar = () => {
 
       {/* Menú en Desktop */}
       <ul className="hidden md:flex gap-6 text-light-textPrimary dark:text-dark-textPrimary">
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-          Home
-        </li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-          About
-        </li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-          Features
-        </li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-          Pricing
-        </li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-          Contact
-        </li>
+        {sections.map((section) => (
+          <li
+            key={section}
+            className={`cursor-pointer transition ${
+              activeSection === section
+                ? "text-light-primary dark:text-dark-primary font-semibold"
+                : "hover:text-light-primary dark:hover:text-dark-primary"
+            }`}
+            onClick={() => handleScrollToSection(section)}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </li>
+        ))}
       </ul>
 
       <div className="flex items-center">
@@ -73,7 +90,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 right-0 w-full min-h-screen  bg-light-background dark:bg-dark-background shadow-lg flex flex-col p-6 z-50"
+            className="fixed top-0 right-0 w-full min-h-screen bg-light-background dark:bg-dark-background shadow-lg flex flex-col p-6 z-50"
           >
             {/* Cerrar Menú */}
             <button
@@ -85,21 +102,19 @@ const Navbar = () => {
 
             {/* Links del Menú */}
             <ul className="flex flex-col gap-6 text-lg text-light-textSecondary dark:text-dark-textSecondary">
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-                Home
-              </li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-                About
-              </li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-                Features
-              </li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-                Pricing
-              </li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
-                Contact
-              </li>
+              {sections.map((section) => (
+                <li
+                  key={section}
+                  className={`cursor-pointer transition ${
+                    activeSection === section
+                      ? "text-light-primary dark:text-dark-primary font-semibold"
+                      : "hover:text-light-primary dark:hover:text-dark-primary"
+                  }`}
+                  onClick={() => handleScrollToSection(section)}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </li>
+              ))}
             </ul>
           </motion.div>
         )}

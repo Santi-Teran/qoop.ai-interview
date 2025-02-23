@@ -9,11 +9,19 @@ export default function Home() {
   return (
     <div>
       <Toaster />
-      <Hero />
-      <Features />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="features">
+        <Features />
+      </div>
       <Testimonials />
-      <Pricing />
-      <Contact />
+      <div id="pricing">
+        <Pricing />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
     </div>
   );
 }
