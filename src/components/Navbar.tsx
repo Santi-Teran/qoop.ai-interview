@@ -64,7 +64,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 right-0 w-full h-full bg-light-background dark:bg-dark-background shadow-lg flex flex-col p-6 z-50"
+            className="fixed top-0 right-0 w-full min-h-screen  bg-light-background dark:bg-dark-background shadow-lg flex flex-col p-6 z-50"
           >
             {/* Cerrar Menú */}
             <button className="self-end mr-2 mb-6 text-light-textPrimary dark:text-dark-textPrimary" onClick={toggleMenu}>
