@@ -1,12 +1,12 @@
-import React from 'react'
-import { EmblaOptionsType } from 'embla-carousel'
+import React from "react";
+import { EmblaOptionsType } from "embla-carousel";
 import {
   PrevButton,
   NextButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
-import useEmblaCarousel from 'embla-carousel-react'
-import { Quote } from 'lucide-react'
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButtons";
+import useEmblaCarousel from "embla-carousel-react";
+import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Testimonial {
@@ -22,45 +22,45 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options)
+  const { slides, options } = props;
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className='embla'>
+    <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-        {slides.map((testimonial) => (
+          {slides.map((testimonial) => (
             <motion.div
-            key={testimonial.id}
-            className="embla__slide flex items-stretch" 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: testimonial.id * 0.05 }}
-          >
-            <div className='flex flex-col h-full min-h-[250px] p-6 bg-light-background dark:bg-dark-background border border-light-textSecondary dark:border-dark-textSecondary rounded-2xl shadow-md'>
-              <div className='flex justify-between items-start'>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-12 h-12 bg-light-primary dark:bg-dark-primary rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.email.charAt(0).toUpperCase()}
+              key={testimonial.id}
+              className="embla__slide flex items-stretch"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: testimonial.id * 0.05 }}
+            >
+              <div className="flex flex-col h-full min-h-[250px] p-6 bg-light-background dark:bg-dark-background border border-light-textSecondary dark:border-dark-textSecondary rounded-2xl shadow-md">
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 bg-light-primary dark:bg-dark-primary rounded-full flex items-center justify-center text-white font-bold">
+                      {testimonial.email.charAt(0).toUpperCase()}
+                    </div>
+                    <h3 className="text-lg font-semibold text-light-textPrimary dark:text-dark-textPrimary">
+                      {testimonial.name.split(" ")[0]}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-light-textPrimary dark:text-dark-textPrimary">
-                    {testimonial.name.split(" ")[0]}
-                  </h3>
+                  <Quote className="w-20 h-20 text-light-primary dark:text-dark-primary" />
                 </div>
-                <Quote className="w-20 h-20 text-light-primary dark:text-dark-primary" />
+                <p className="text-light-textSecondary dark:text-dark-textSecondary flex-grow">
+                  {testimonial.body}
+                </p>
               </div>
-              <p className="text-light-textSecondary dark:text-dark-textSecondary flex-grow">
-                {testimonial.body}
-              </p>
-            </div>
-          </motion.div>          
+            </motion.div>
           ))}
         </div>
       </div>
@@ -72,7 +72,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EmblaCarousel
+export default EmblaCarousel;

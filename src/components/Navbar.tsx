@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeChanger from "./ThemeChanger";
 
 const Navbar = () => {
-
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,11 +38,21 @@ const Navbar = () => {
 
       {/* Menú en Desktop */}
       <ul className="hidden md:flex gap-6 text-light-textPrimary dark:text-dark-textPrimary">
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Home</li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">About</li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Features</li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Pricing</li>
-        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Contact</li>
+        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+          Home
+        </li>
+        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+          About
+        </li>
+        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+          Features
+        </li>
+        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+          Pricing
+        </li>
+        <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+          Contact
+        </li>
       </ul>
 
       <div className="flex items-center">
@@ -67,17 +76,30 @@ const Navbar = () => {
             className="fixed top-0 right-0 w-full min-h-screen  bg-light-background dark:bg-dark-background shadow-lg flex flex-col p-6 z-50"
           >
             {/* Cerrar Menú */}
-            <button className="self-end mr-2 mb-6 text-light-textPrimary dark:text-dark-textPrimary" onClick={toggleMenu}>
+            <button
+              className="self-end mr-2 mb-6 text-light-textPrimary dark:text-dark-textPrimary"
+              onClick={toggleMenu}
+            >
               <X size={28} />
             </button>
 
             {/* Links del Menú */}
             <ul className="flex flex-col gap-6 text-lg text-light-textSecondary dark:text-dark-textSecondary">
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Home</li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">About</li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Features</li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Pricing</li>
-              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">Contact</li>
+              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+                Home
+              </li>
+              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+                About
+              </li>
+              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+                Features
+              </li>
+              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+                Pricing
+              </li>
+              <li className="cursor-pointer hover:text-light-primary dark:hover:text-dark-primary transition">
+                Contact
+              </li>
             </ul>
           </motion.div>
         )}
