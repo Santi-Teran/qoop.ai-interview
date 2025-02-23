@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center text-center gap-6 py-20 px-6 overflow-hidden">
+    <section className="relative flex flex-col items-center text-center gap-6 pt-40 pb-20 px-6 overflow-hidden">
       {/* Background Circles */}
       <div className="absolute inset-0 -z-10 flex justify-center items-center">
         <motion.div

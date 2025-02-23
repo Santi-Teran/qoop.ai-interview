@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12">
+    <section className="relative flex flex-col items-center py-20 px-6 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

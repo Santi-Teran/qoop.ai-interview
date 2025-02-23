@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
-          <div className="min-h-screen">
+          <div>
             <Navbar />
             <main>{children}</main>
             <Footer />
