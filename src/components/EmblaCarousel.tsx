@@ -8,6 +8,7 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import { nunito } from "@/app/fonts";
 
 interface Testimonial {
   id: number;
@@ -33,7 +34,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="embla">
+    <section className={`${nunito.className} embla`}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((testimonial) => (

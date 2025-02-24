@@ -24,7 +24,7 @@ export default {
           secondary: "#ff8eb6",
           tertiary: "#FFC75F",
           background: "#0A0F24",
-        }        
+        },
       },
       backgroundImage: {
         "gradient-light":

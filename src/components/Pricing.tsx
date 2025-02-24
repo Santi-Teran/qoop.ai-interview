@@ -1,4 +1,5 @@
 "use client";
+import { exo, nunito } from "@/app/fonts";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
@@ -56,11 +57,15 @@ const Pricing = () => {
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         />
       </div>
-      <h2 className="text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary mb-6">
+      <h2
+        className={`${exo.className} text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary mb-6`}
+      >
         Choose Your{" "}
         <span className="text-light-primary dark:text-dark-primary">Plan</span>
       </h2>
-      <p className="text-light-textSecondary dark:text-dark-textSecondary max-w-xl mx-auto mb-10">
+      <p
+        className={`${nunito.className} text-light-textSecondary dark:text-dark-textSecondary max-w-xl mx-auto mb-10`}
+      >
         Find the perfect plan to build better habits and stay on track with your
         goals.
       </p>

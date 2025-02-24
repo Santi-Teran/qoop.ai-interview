@@ -1,4 +1,5 @@
 "use client";
+import { exo, nunito } from "@/app/fonts";
 import { motion } from "framer-motion";
 import {
   CheckCircle,
@@ -47,7 +48,9 @@ const Features = () => {
     <section className="relative flex flex-col items-center gap-10 py-20 px-6 overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-6 w-full max-w-4xl text-center md:text-left">
         {/* Section Title */}
-        <h2 className="text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary md:w-2/3">
+        <h2
+          className={`${exo.className} text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary md:w-2/3`}
+        >
           Why choose{" "}
           <span className="text-light-primary dark:text-dark-primary">
             SmartTracker?
@@ -55,7 +58,9 @@ const Features = () => {
         </h2>
 
         {/* Section Description */}
-        <p className="text-lg text-light-textSecondary dark:text-dark-textSecondary md:w-1/3">
+        <p
+          className={`${nunito.className} text-lg text-light-textSecondary dark:text-dark-textSecondary md:w-1/3`}
+        >
           Discover powerful features designed to help you build better habits,
           stay consistent, and achieve your goals.
         </p>
@@ -74,10 +79,14 @@ const Features = () => {
             <div className="text-light-primary dark:text-dark-primary mb-6">
               {feature.icon}
             </div>
-            <h3 className="text-xl font-semibold text-light-textPrimary dark:text-dark-textPrimary">
+            <h3
+              className={`${exo.className} text-xl font-semibold text-light-textPrimary dark:text-dark-textPrimary`}
+            >
               {feature.title}
             </h3>
-            <p className="text-light-textSecondary dark:text-dark-textSecondary">
+            <p
+              className={`${nunito.className} text-light-textSecondary dark:text-dark-textSecondary`}
+            >
               {feature.description}
             </p>
           </motion.div>

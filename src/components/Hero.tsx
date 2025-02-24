@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { exo, nunito } from "@/app/fonts";
 
 const words = ["objectives", "goals", "dreams", "success"];
 
@@ -31,7 +32,9 @@ const Hero = () => {
       </div>
 
       {/* Animated Title */}
-      <h1 className="text-4xl font-bold text-light-textPrimary dark:text-dark-textPrimary">
+      <h1
+        className={`${exo.className} text-4xl font-bold text-light-textPrimary dark:text-dark-textPrimary`}
+      >
         Track your habits, achieve your{" "}
         <motion.span
           key={wordIndex}
@@ -45,13 +48,17 @@ const Hero = () => {
       </h1>
 
       {/* Description */}
-      <p className="text-lg text-light-textSecondary dark:text-dark-textSecondary max-w-lg">
+      <p
+        className={`${nunito.className} text-lg text-light-textSecondary dark:text-dark-textSecondary max-w-lg`}
+      >
         Stay on top of your daily habits with Smart Habit Tracker. Build
         consistency, stay motivated, and reach your goals effortlessly.
       </p>
 
       {/* Call to Action */}
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-md">
+      <div
+        className={`${exo.className} flex flex-col md:flex-row gap-4 w-full max-w-md`}
+      >
         <button className="w-full md:w-1/2 bg-light-primary dark:bg-dark-primary py-3 text-lg rounded-full">
           Start tracking now
         </button>

@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
+import { exo, nunito } from "@/app/fonts";
 
 const contactSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -33,7 +34,9 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex flex-col items-center py-20 px-6 overflow-hidden">
+    <section
+      className={`${nunito.className} relative flex flex-col items-center py-20 px-6 overflow-hidden`}
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +44,9 @@ const Contact = () => {
         viewport={{ once: true }}
         className="max-w-3xl mx-auto text-center"
       >
-        <h2 className="text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary mb-4">
+        <h2
+          className={`${exo.className} text-3xl font-bold text-light-textPrimary dark:text-dark-textPrimary mb-4`}
+        >
           Contact Us
         </h2>
         <p className="text-light-textSecondary dark:text-dark-textSecondary mb-6">
@@ -111,7 +116,7 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
             disabled={isSubmitting}
             type="submit"
-            className="w-full py-3 rounded-lg font-semibold transition-colors bg-light-primary text-white dark:bg-dark-primary hover:bg-opacity-90 disabled:opacity-50"
+            className={`${exo.className} w-full py-3 rounded-lg font-semibold transition-colors bg-light-primary text-white dark:bg-dark-primary hover:bg-opacity-90 disabled:opacity-50`}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </motion.button>

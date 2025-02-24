@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeChanger from "./ThemeChanger";
+import { exo, nunito } from "@/app/fonts";
 
 const sections = ["home", "features", "pricing", "contact"];
 
@@ -53,10 +54,12 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
     >
       {/* Logo */}
-      <h1 className="text-xl font-bold">SmartTracker</h1>
+      <h1 className={`${exo.className} text-xl font-bold`}>SmartTracker</h1>
 
       {/* Menú en Desktop */}
-      <ul className="hidden md:flex gap-6 text-light-textPrimary dark:text-dark-textPrimary">
+      <ul
+        className={`${nunito.className} hidden md:flex gap-6 text-light-textPrimary dark:text-dark-textPrimary`}
+      >
         {sections.map((section) => (
           <li
             key={section}
