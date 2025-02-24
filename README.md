@@ -2,6 +2,15 @@
 
 This is a **Next.js** project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+---
+
+## 🚀 Live Demo
+
+You can view the live deployment at:
+https://qoop-ai-interview.vercel.app/
+
+---
+
 ## 🚀 Features
 
 - ⚡ Built with **Next.js** and **TypeScript**
