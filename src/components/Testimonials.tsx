@@ -11,17 +11,15 @@ interface Testimonial {
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchTestimonials = async () => {
-      const data = await fetch(
-        "https://jsonplaceholder.typicode.com/comments?_limit=6"
-      );
-      const testimonials: Testimonial[] = await data.json();
-      setTestimonials(testimonials);
-    };
-
-    fetchTestimonials();
+    fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonials(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -38,7 +36,13 @@ const Testimonials = () => {
           their daily lives.
         </p>
       </div>
-      <EmblaCarousel slides={testimonials} />
+      <>
+        {loading ? (
+          <div className="loader my-20"></div>
+        ) : (
+          <EmblaCarousel slides={testimonials} />
+        )}
+      </>
     </section>
   );
 };
